@@ -24,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: clip;
-  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

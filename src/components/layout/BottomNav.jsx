@@ -1,9 +1,10 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import { Home, Search, Bookmark } from 'lucide-react';
 
 export function BottomNav() {
-  return (
+  const nav = (
     <nav className="bottom-nav" aria-label="Mobile Navigation">
       <NavLink
         to="/"
@@ -37,4 +38,6 @@ export function BottomNav() {
       </NavLink>
     </nav>
   );
+
+  return typeof document !== 'undefined' ? createPortal(nav, document.body) : nav;
 }

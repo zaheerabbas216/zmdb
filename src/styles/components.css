@@ -234,13 +234,8 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background-color: var(--bg-panel);
   border-top: 3px solid var(--neon-green);
-  z-index: 900;
+  z-index: 1000;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.9);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  touch-action: manipulation;
 }
 
 @media (min-width: 640px) {
