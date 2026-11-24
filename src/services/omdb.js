@@ -1,6 +1,5 @@
 // Base URL for OMDb API. Can be updated to a proxy route (e.g., /api/omdb) in production
 const OMDB_BASE_URL = 'https://www.omdbapi.com/';
-const OMDB_API_KEY = '1be518dd';
 
 // In-memory cache for search queries and title details
 const searchCache = new Map();
@@ -11,17 +10,14 @@ const detailsCache = new Map();
  */
 export function getApiKey() {
   const envKey = import.meta.env.VITE_OMDB_API_KEY;
-  if (envKey && envKey.trim()) {
-    return envKey.trim();
-  }
-  return OMDB_API_KEY;
+  return envKey?.trim() || '';
 }
 
 /**
  * Check if API key is configured
  */
 export function hasApiKey() {
-  return true;
+  return Boolean(getApiKey());
 }
 
 /**
