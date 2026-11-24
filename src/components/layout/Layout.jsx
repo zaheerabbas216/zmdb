@@ -6,13 +6,13 @@ import { Footer } from './Footer';
 
 export function Layout() {
   return (
-    <>
+    <div className="site-layout">
       <Header />
-      <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <main className="main-content">
         <Outlet />
       </main>
       <Footer />
       <BottomNav />
-    </>
+    </div>
   );
 }

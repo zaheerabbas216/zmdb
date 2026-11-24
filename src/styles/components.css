@@ -1,4 +1,24 @@
 /* Layout components */
+.site-layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 639px) {
+  .main-content {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + var(--space-6));
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -209,12 +229,18 @@
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background-color: var(--bg-panel);
   border-top: 3px solid var(--neon-green);
-  z-index: 100;
+  z-index: 900;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.9);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  touch-action: manipulation;
 }
 
 @media (min-width: 640px) {
@@ -632,7 +658,7 @@
 /* Toasts */
 .toast-viewport {
   position: fixed;
-  bottom: calc(var(--bottom-nav-height) + 16px);
+  bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 16px);
   right: 16px;
   z-index: 2000;
   display: flex;
